@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class SongAdapter extends ArrayAdapter<Song>{
-    private static final String LOG_TAG = SongAdapter.class.getSimpleName();
+    private static final String LOG_TAG_TWO = SongAdapter.class.getSimpleName();
 
     /**
      * @param context The current context. Used to inflate the layout file.
@@ -38,7 +38,7 @@ public class SongAdapter extends ArrayAdapter<Song>{
      */
     @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -50,19 +50,18 @@ public class SongAdapter extends ArrayAdapter<Song>{
         Song currentSong = getItem(position);
 
         //Find the song title TextView id
-        TextView songTitleTextView = listItemView.findViewById(R.id.song_title);
-
+        TextView songTitleTextView = listItemView.findViewById(R.id.song_title_textview);
         //Set the text on the song title TextView
-        songTitleTextView.setText(currentSong.getSongTitle());
+        songTitleTextView.setText(currentSong.getmSongTitle());
 
-        // Find the TextView in the song_list_item.xml layout with the artist text view
-        TextView theArtistTextView = listItemView.findViewById(R.id.artist_name);
+        // Find the TextView in the song_list_item.xml layout with the song artist TextView
+        TextView songArtistTextView = listItemView.findViewById(R.id.song_artist_textview);
         //Set the text to the ArtistTextView
-        theArtistTextView.setText(currentSong.getArtistName());
+        songArtistTextView.setText(currentSong.getmArtistName());
 
-        //Find the TextView in the song_list_item.xml layout with the album song cover image view
-        ImageView songCover = listItemView.findViewById(R.id.album_song_cover);
-        songCover.setImageResource(currentSong.getCoverArt());
+        //Find the ImageView in the song_list_item.xml layout with the song cover ImageView
+        ImageView songCoverImageView = listItemView.findViewById(R.id.song_cover_imageview);
+        songCoverImageView.setImageResource(currentSong.getmAlbumArt());
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

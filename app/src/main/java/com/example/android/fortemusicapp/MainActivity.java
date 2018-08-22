@@ -14,6 +14,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,32 +24,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView top10 = findViewById(R.id.top10_textview);
-        TextView upcomingArtists = findViewById(R.id.upcoming_artists_textview);
-        TextView newReleases = findViewById(R.id.new_releases_textview);
+        TextView artistsTextView = findViewById(R.id.upcoming_artists_textview);
+        TextView playlistTextView = findViewById(R.id.songs_textview);
 
-        top10.setOnClickListener(new View.OnClickListener() {
+        artistsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent top10Category = new Intent(MainActivity.this, Top10.class);
-                startActivity(top10Category);
+                Intent artistsCategory = new Intent(MainActivity.this, TheArtists.class);
+                startActivity(artistsCategory);
             }
         });
 
-        upcomingArtists.setOnClickListener(new View.OnClickListener() {
+        playlistTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent upComingArtistsCategory = new Intent(MainActivity.this, Top10.class);
-                startActivity(upComingArtistsCategory);
-            }
-        });
-
-        newReleases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent newReleasesCategory = new Intent(MainActivity.this, Top10.class);
-                startActivity(newReleasesCategory);
+                Intent playlistCategory = new Intent(MainActivity.this, Playlist.class);
+                startActivity(playlistCategory);
             }
         });
     }
+
 }

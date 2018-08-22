@@ -16,9 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Top10" />
-        <activity android:name=".NewReleases" />
-        <activity android:name=".UpcomingArtists"></activity>
+        <activity
+            android:name=".TheArtists"
+            android:label="@string/title_activity_the_artists"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Playlist"></activity>
     </application>
 
 </manifest>

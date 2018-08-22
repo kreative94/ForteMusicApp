@@ -1,13 +1,9 @@
 package com.example.android.fortemusicapp;
 
-import android.widget.ImageView;
-
 /**
  * (@link Song) represents an individual single song. Songs can also be added to albums
  */
 public class Song {
-
-    //The Song Info
 
     //The song title
     private String mSongTitle;
@@ -16,29 +12,29 @@ public class Song {
     private String mArtistName;
 
     //Album Cover
-    private int mCoverArt;
+    private int mAlbumArt;
 
     /**
      *
      * @param theTitle the song title
      * @param theArtist the artist of the song
-     * @param theCover the song cover art
+     * @param albumCover the song cover art
      */
-    public Song(String theTitle, String theArtist, int theCover){
+    public Song(String theTitle, String theArtist, int albumCover){
         mSongTitle = theTitle;
         mArtistName = theArtist;
-        mCoverArt = theCover;
+        mAlbumArt = albumCover;
     }
 
-    public String getSongTitle(){
+    public String getmSongTitle(){
         return  mSongTitle;
     }
 
-    public String getArtistName(){
+    public String getmArtistName(){
         return  mArtistName;
     }
 
-    public int getCoverArt() {
-        return mCoverArt;
+    public int getmAlbumArt() {
+        return mAlbumArt;
     }
 }

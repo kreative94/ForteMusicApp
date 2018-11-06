@@ -20,7 +20,9 @@
             android:name=".TheArtists"
             android:label="@string/title_activity_the_artists"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Playlist"></activity>
+        <activity 
+                  android:name=".Playlist"
+                  android:label="@string/title_activitity_playlists
+                  android:theme="@style/AppTheme.NoActionBar" />
     </application>
-
 </manifest>
